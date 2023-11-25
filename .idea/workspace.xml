@@ -32,7 +32,7 @@
     <property name="com.intellij.ide.scratch.ScratchImplUtil$2/新建临时文件" value="Python" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
-  <component name="RunManager" selected="Python.scratch">
+  <component name="RunManager" selected="Python.viewer">
     <configuration name="scratch" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="cumt" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -98,8 +98,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.scratch" />
         <item itemvalue="Python.viewer" />
+        <item itemvalue="Python.scratch" />
         <item itemvalue="Python.scratch_1" />
       </list>
     </recent_temporary>
