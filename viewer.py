@@ -34,10 +34,6 @@ class bianjiqi(ttk.Frame):
                 file=PATH / 'cailiao.png'),
         ]
 
-        # 快捷栏
-        kuaijie = ttk.Frame(self, style='primary.TFrame')
-        kuaijie.pack(fill=X, pady=1, side=TOP)
-
         ## 表头
         biaotou = ttk.Menu(app)
         app.config(menu=biaotou)
@@ -68,11 +64,15 @@ class bianjiqi(ttk.Frame):
         mingling.add_command(label='约束')
         mingling.add_command(label='荷载')
         mingling.add_command(label='材料')
-        biaotou.add_cascade(label='命令(C)', menu=bianji)
+        biaotou.add_cascade(label='命令(C)', menu=mingling)
 
         ## 求解
         qiujie = ttk.Menu(biaotou)
-
+        qiujie.add_command(label='几何组成')
+        qiujie.add_command(label='内力计算')
+        qiujie.add_command(label='位移计算')
+        qiujie.add_command(label='位移内力')
+        biaotou.add_cascade(label='求解(S)', menu=qiujie)
 
         # 工具栏
         gongju = ttk.Frame(self)
@@ -82,7 +82,7 @@ class bianjiqi(ttk.Frame):
 
 
         # # 表头
-        # top_frame = ttk.Frame(self, padding=5, style=SECONDARY)
+        # top_frame = ttk.Frame(self, padding=5, bootstyle=SECONDARY)
         # top_frame.grid(row=0, column=0, columnspan=5, sticky=EW)
         #
         # top_label = ttk.Label(
@@ -90,45 +90,45 @@ class bianjiqi(ttk.Frame):
         #     style=SECONDARY
         # )
         # top_label.pack(fill=Y, pady=1, side=TOP)
-        #
-        # # 命令栏
-        # mingling_frame = ttk.Frame(self)
-        # mingling_frame.grid(row=0, column=0, sticky=NSEW)
-        #
-        # wenjian = ttk.Button(
-        #     master=mingling_frame,
-        #     text='文件',
-        #     style=(SECONDARY,OUTLINE)
-        # )
-        # wenjian.pack(side=LEFT, fill=BOTH)
-        #
-        # bianji = ttk.Button(
-        #     master=mingling_frame,
-        #     text='编辑',
-        #     style=(DARK,OUTLINE)
-        # )
-        # bianji.pack(side=LEFT, fill=BOTH)
-        #
-        # chakan = ttk.Button(
-        #     master=mingling_frame,
-        #     text='查看',
-        #     style=(SECONDARY,OUTLINE)
-        # )
-        # chakan.pack(side=LEFT, fill=BOTH)
-        #
-        # mingling = ttk.Button(
-        #     master=mingling_frame,
-        #     text='命令',
-        #     style=(SECONDARY, OUTLINE)
-        # )
-        # mingling.pack(side=LEFT, fill=BOTH)
-        #
-        # qiujie = ttk.Button(
-        #     master=mingling_frame,
-        #     text='求解',
-        #     style=(SECONDARY, OUTLINE)
-        # )
-        # qiujie.pack(side=LEFT, fill=BOTH)
+
+        # 命令栏
+        mingling_frame = ttk.Frame(self)
+        mingling_frame.grid(row=0, column=0, sticky=NSEW)
+
+        wenjian = ttk.Button(
+            master=mingling_frame,
+            image='jiedian',
+            style=LIGHT
+        )
+        wenjian.pack(side=TOP, fill=BOTH)
+
+        bianji = ttk.Button(
+            master=mingling_frame,
+            text='编辑',
+            style=(DARK,OUTLINE)
+        )
+        bianji.pack(side=TOP, fill=BOTH)
+
+        chakan = ttk.Button(
+            master=mingling_frame,
+            text='查看',
+            style=(SECONDARY,OUTLINE)
+        )
+        chakan.pack(side=TOP, fill=BOTH)
+
+        mingling = ttk.Button(
+            master=mingling_frame,
+            text='命令',
+            style=(SECONDARY, OUTLINE)
+        )
+        mingling.pack(side=TOP, fill=BOTH)
+
+        qiujie = ttk.Button(
+            master=mingling_frame,
+            text='求解',
+            style=(SECONDARY, OUTLINE)
+        )
+        qiujie.pack(side=LEFT, fill=BOTH)
 
 
 
